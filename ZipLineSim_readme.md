@@ -58,24 +58,24 @@ Below is a high-level map of the main sections and their functionalities:
 | Section                              | Purpose                                                                 |
 |--------------------------------------|-------------------------------------------------------------------------|
 | **1. Preparation**                  | Set up environment and key simulation variables                         |
-| ├─ 1.1 Dependencies                 | Install and import required Python packages like `simpy`, `numpy`       |
-| ├─ 1.2 Global Parameters            | Define core parameters such as fleet size, service time, or capacity    |
+|  1.1 Dependencies                 | Install and import required Python packages like `simpy`, `numpy`       |
+| 1.2 Global Parameters            | Define core parameters such as fleet size, service time, or capacity    |
 | **2. Order Generation**            | Create synthetic order streams for simulation                           |
-| ├─ 2.1 Time Distribution Input      | Define order volume per hour using widgets                              |
-| ├─ 2.2 Priority Distribution Input  | Choose priority ratios (emergency, scheduled, eod) over time            |
-| ├─ 2.3 Vaccine Tagging              | Assign vaccine status to orders for conditional process paths           |
+| 2.1 Time Distribution Input      | Define order volume per hour using widgets                              |
+| 2.2 Priority Distribution Input  | Choose priority ratios (emergency, scheduled, eod) over time            |
+| 2.3 Vaccine Tagging              | Assign vaccine status to orders for conditional process paths           |
 | **3. Call Handling**               | Simulate order intake and call center queueing                          |
-| ├─ 3.1 Call Class                   | SimPy resource that models call arrival and handling                    |
-| ├─ 3.2 Summary Function             | Analyze waiting time, call load, and visualize distribution             |
+| 3.1 Call Class                   | SimPy resource that models call arrival and handling                    |
+| 3.2 Summary Function             | Analyze waiting time, call load, and visualize distribution             |
 | **4. Time Window Assignment**      | Assign delivery windows for scheduled orders                            |
-| ├─ 4.1 Window Logic                 | Generate delivery windows using a normal distribution + rounding        |
+| 4.1 Window Logic                 | Generate delivery windows using a normal distribution + rounding        |
 | **5. Dispatch Simulation**         | Simulate the full delivery workflow (pick, load, fly, return, charge)   |
-| ├─ 5.1 Dispatch Class               | Core SimPy logic for assigning and running drone delivery tasks         |
-| ├─ 5.2 Queue Management             | FIFO or priority-based queues for staging deliveries                    |
+| 5.1 Dispatch Class               | Core SimPy logic for assigning and running drone delivery tasks         |
+| 5.2 Queue Management             | FIFO or priority-based queues for staging deliveries                    |
 | **6. Output & Evaluation**         | Post-simulation analysis and reporting                                  |
-| ├─ 6.1 Delivery Summary            | Waiting time summary per stage + overall utilization metrics            |
-| ├─ 6.2 SLA Analysis                | Calculate on-time delivery rate by priority and hour                    |
-| ├─ 6.3 Visualization               | Generate bar and line plots for intuitive performance understanding     |
+| 6.1 Delivery Summary            | Waiting time summary per stage + overall utilization metrics            |
+| 6.2 SLA Analysis                | Calculate on-time delivery rate by priority and hour                    |
+| 6.3 Visualization               | Generate bar and line plots for intuitive performance understanding     |
 
 ## 5. Parameters Input
 
@@ -501,6 +501,6 @@ Charger usage informs whether the number of chargers is adequate under current l
 
 ## 8. Conclusions
 
-The ZipLineSim model offers a flexible and realistic framework for simulating last-mile autonomous drone delivery operations. By integrating discrete event simulation (DES) with configurable resource pools, delivery priorities, and time-window constraints, the model captures the complexity of real-world logistics systems. It provides visibility into system bottlenecks, such as operator overload or drone scarcity, and quantifies their impact on key performance metrics like on-time rate and waiting time. However, the current model assumes static resource allocation and does not incorporate predictive or dynamic scheduling, which may limit adaptability under shifting demand patterns. 
+The ZipLineSim model provides a flexible and realistic framework for simulating autonomous last-mile drone delivery operations. By combining discrete event simulation (DES) with configurable resource pools, delivery priorities, and time window constraints, the model is able to capture the complexity of real-world logistics systems. It provides insights into system bottlenecks, such as operator overload or drone scarcity, and quantifies their impact on key performance indicators such as on-time performance and waiting time. However, the current model assumes static resource allocation and does not incorporate predictive or dynamic scheduling, which may limit its adaptability to changing demand patterns.
 
-Several improvements could improve the efficiency and realism of the current ZipLineSim model. First, adding critical bottleneck resources, especially more assembly operators and expanding the drone or battery fleet, would help alleviate congestion during peak hours. In addition, the model currently prioritizes heavily towards urgent orders, often at the expense of regularly scheduled deliveries; adjusting the delivery sequencing logic to balance urgency and fairness could improve SLA. In addition, the midday peak could be reduced by modifying the order generation distribution to smooth out changes in demand over time. Incorporating batching or grouping logic could potentially improve operational efficiency, especially for lightweight orders that currently trigger a full delivery workflow. Finally, the system could employ a dynamic resource allocation strategy that allows for temporary reallocation of urgently reserved drones or batteries during off-peak hours to support regularly scheduled deliveries without compromising critical readiness. 
+Several improvements could improve the efficiency and realism of the current ZipLineSim model. First, adding key bottleneck resources, especially assembly operators, and expanding the drone or battery fleet would help alleviate congestion during peak hours. In addition, the model currently highly prioritizes urgent orders, often at the expense of regular deliveries; adjusting the delivery sequencing logic to balance urgency and fairness could improve service level agreements (SLAs). In addition, the order generation distribution could be modified to smooth demand variations over time, thereby reducing the midday peak. Incorporating batching or grouping logic could potentially improve operational efficiency, especially for lightweight orders that currently trigger a full delivery process. Finally, the system could employ dynamic resource allocation strategies that allow for the temporary reallocation of emergency reserved drones or batteries during off-peak hours to support scheduled deliveries without compromising critical readiness.
