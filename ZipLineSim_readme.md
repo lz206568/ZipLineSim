@@ -121,7 +121,7 @@ In the parts **Global Settings** and **Key Param Editors**, all the input parame
 
 The `OrderDistInput` widget allows users to manually specify the hourly distribution of orders over a 12-hour period (from 07:00 to 19:00). It is especially useful for simulating different demand patterns across the day.
 
-![OrderDistInput UI](./order_dist_input.png)
+![Order Distribution Input UI]([./order_dist_input.png](https://github.com/user-attachments/assets/8d783954-e783-4c1d-aa7f-cd5fd4c58800))
 
 **Usage Instructions:**
 
@@ -143,7 +143,7 @@ Once saved, the input is used to populate the `ORDER_DIST` variable, which contr
 
 The `PrioDistInput` widget allows users to define the **priority distribution** of orders—how likely each order is to be an Emergency, Scheduled, or End-of-Day (EOD)—across the 12-hour operational window (07:00–19:00).
 
-![OrderNumberInput UI](OrderNumberInput.png)
+![Priority Distribution Input UI]([OrderNumberInput.png](https://github.com/user-attachments/assets/6f3c64f8-609f-43ea-889f-18a22eb543e4))
 
 **Step-by-Step Usage:**
 
@@ -174,7 +174,7 @@ This distribution directly affects the `priority` field in the generated `Order`
 
 The `OrderNumberInput` widget allows the user to define the **total number of delivery orders** to simulate in the system.
 
-![OrderNumberInput UI](./OrderNumberInput.png)
+![Order Number Input UI]([./OrderNumberInput.png](https://github.com/user-attachments/assets/ed6e8fa2-c35f-425d-b41d-1d2c32a054d4))
 
 **How to Use:**
 
