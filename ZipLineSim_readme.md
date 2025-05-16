@@ -143,7 +143,7 @@ Once saved, the input is used to populate the `ORDER_DIST` variable, which contr
 
 The `PrioDistInput` widget allows users to define the **priority distribution** of orders—how likely each order is to be an Emergency, Scheduled, or End-of-Day (EOD)—across the 12-hour operational window (07:00–19:00).
 
-![PrioDistInput UI](./prio_dist_input.png)
+![OrderNumberInput UI](OrderNumberInput.png)
 
 **Step-by-Step Usage:**
 
