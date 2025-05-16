@@ -390,7 +390,7 @@ This is the main dataset for evaluating delivery efficiency, bottlenecks, and on
 ### 7.2 Performance - Waiting Time
 This section analyzes how long orders wait at each stage of the delivery process. It also identifies overweight orders that require multiple trips and calculates the number of deliveries needed, completed deliveries, and waiting time distribution.
 
-####Summary Table
+Summary Table
 | Stage    | Avg Wait Time | Median Wait | Max Wait | Min Wait |
 | -------- | ------------- | ----------- | -------- | -------- |
 | Call     | 08m 09s       | 02m 38s     | 31m 42s  | 00m 00s  |
